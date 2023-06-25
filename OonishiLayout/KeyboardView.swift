@@ -27,13 +27,22 @@ struct KeyboardView: View {
     ]
     var body: some View {
         VStack {
+            ZStack{
+                Spacer()
+                    .frame(height: keyHeight)
+                TextField("入力", text: $inputText)
+                    .onChange(of: inputText) { _ in
+                        convertText()
+                    }
+
+            }
             HStack(spacing: keySpacing) {
                 Spacer()
                     .frame(width: keyWidth * 0.5 + keySpacing * 1)
                 Group {
                     ForEach(keys[0], id: \.self) { key in
                         Button(key){
-                            inputTextAction(key)
+                            inputText += key
                         }.frame(width: keyWidth, height: keyHeight)
                     }
                 }
@@ -48,7 +57,7 @@ struct KeyboardView: View {
                 Group {
                     ForEach(keys[1], id: \.self) { key in
                         Button(key){
-                            inputTextAction(key)
+                            inputText += key
                         }.frame(width: keyWidth, height: keyHeight)
                     }
                 }
@@ -62,14 +71,12 @@ struct KeyboardView: View {
                     Spacer()
                         .frame(width: keyWidth * 4.5 + keySpacing * 5)
                     Text("大西配列")
-//                        .fontWeight(.semibold)
-                        .font(.system(size: keyHeight / 2))
-                        .padding(0)
+                        .font(.system(size: keyHeight / 3))
                 }
                 Group {
                     ForEach(keys[2], id: \.self) { key in
                         Button(key){
-                            inputTextAction(key)
+                            inputText += key
                         }.frame(width: keyWidth, height: keyHeight)
                     }
                 }
@@ -101,12 +108,19 @@ struct KeyboardView: View {
                     .frame(height: keyHeight)
                     .padding(.horizontal)
                     Spacer()
-                    
                     // Delete Text
                     Button {
                         deleteTextAction()
                     } label: {
                         Image(systemName: "delete.left")
+                            .frame(width: keyHeight, height: keyHeight)
+                    }
+                    
+                    // Enter Text
+                    Button {
+                        // enter text
+                    } label: {
+                        Image(systemName: "arrow.turn.down.left")
                             .frame(width: keyHeight, height: keyHeight)
                     }
                 }
@@ -119,6 +133,15 @@ struct KeyboardView: View {
         .padding(keySpacing)
             .foregroundColor(Color(uiColor: .label))
     }
+    
+    private func convertText() {
+        // ここに入力文字列をひらがなに変換する処理を実装します
+        // 変換結果を `convertedText` に代入します
+        // 例えば、OpenAIの日本語テキスト変換APIを使用する場合は、APIリクエストを送信して結果を取得する処理を記述します
+        // 以下はダミーの変換処理です
+        convertedText = inputText.replacingOccurrences(of: "a", with: "あ")
+    }
+
 }
 
 struct NextKeyboardButton: View {
