@@ -11,7 +11,36 @@
 		B0D517902A48BACC00B8A7FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5178F2A48BACC00B8A7FD /* ContentView.swift */; };
 		B0D517922A48BACD00B8A7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D517912A48BACD00B8A7FD /* Assets.xcassets */; };
 		B0D517952A48BACD00B8A7FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D517942A48BACD00B8A7FD /* Preview Assets.xcassets */; };
+		B0D517A22A48BAE700B8A7FD /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D517A12A48BAE700B8A7FD /* KeyboardViewController.swift */; };
+		B0D517A62A48BAE700B8A7FD /* OonishiLayout.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B0D5179F2A48BAE700B8A7FD /* OonishiLayout.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B0D517AC2A48BB3F00B8A7FD /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D517AB2A48BB3F00B8A7FD /* KeyboardView.swift */; };
+		B0D517AD2A48BB4A00B8A7FD /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D517AB2A48BB3F00B8A7FD /* KeyboardView.swift */; };
+		B0D517B32A48BD4C00B8A7FD /* View+changeHostingViewBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D517B22A48BD4C00B8A7FD /* View+changeHostingViewBackgroundColor.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0D517A42A48BAE700B8A7FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0D517822A48BACC00B8A7FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0D5179E2A48BAE700B8A7FD;
+			remoteInfo = OonishiLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B0D517AA2A48BAE700B8A7FD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B0D517A62A48BAE700B8A7FD /* OonishiLayout.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B0D5178A2A48BACC00B8A7FD /* OonishiLayoutKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OonishiLayoutKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +48,22 @@
 		B0D5178F2A48BACC00B8A7FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B0D517912A48BACD00B8A7FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0D517942A48BACD00B8A7FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B0D5179F2A48BAE700B8A7FD /* OonishiLayout.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OonishiLayout.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D517A12A48BAE700B8A7FD /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		B0D517A32A48BAE700B8A7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D517AB2A48BB3F00B8A7FD /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		B0D517B22A48BD4C00B8A7FD /* View+changeHostingViewBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+changeHostingViewBackgroundColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B0D517872A48BACC00B8A7FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D5179C2A48BAE700B8A7FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D5178C2A48BACC00B8A7FD /* OonishiLayoutKeyboard */,
+				B0D517A02A48BAE700B8A7FD /* OonishiLayout */,
 				B0D5178B2A48BACC00B8A7FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D5178A2A48BACC00B8A7FD /* OonishiLayoutKeyboard.app */,
+				B0D5179F2A48BAE700B8A7FD /* OonishiLayout.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +110,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B0D517A02A48BAE700B8A7FD /* OonishiLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B0D517A12A48BAE700B8A7FD /* KeyboardViewController.swift */,
+				B0D517AB2A48BB3F00B8A7FD /* KeyboardView.swift */,
+				B0D517B22A48BD4C00B8A7FD /* View+changeHostingViewBackgroundColor.swift */,
+				B0D517A32A48BAE700B8A7FD /* Info.plist */,
+			);
+			path = OonishiLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +131,34 @@
 				B0D517862A48BACC00B8A7FD /* Sources */,
 				B0D517872A48BACC00B8A7FD /* Frameworks */,
 				B0D517882A48BACC00B8A7FD /* Resources */,
+				B0D517AA2A48BAE700B8A7FD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B0D517A52A48BAE700B8A7FD /* PBXTargetDependency */,
 			);
 			name = OonishiLayoutKeyboard;
 			productName = OonishiLayoutKeyboard;
 			productReference = B0D5178A2A48BACC00B8A7FD /* OonishiLayoutKeyboard.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B0D5179E2A48BAE700B8A7FD /* OonishiLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0D517A72A48BAE700B8A7FD /* Build configuration list for PBXNativeTarget "OonishiLayout" */;
+			buildPhases = (
+				B0D5179B2A48BAE700B8A7FD /* Sources */,
+				B0D5179C2A48BAE700B8A7FD /* Frameworks */,
+				B0D5179D2A48BAE700B8A7FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OonishiLayout;
+			productName = OonishiLayout;
+			productReference = B0D5179F2A48BAE700B8A7FD /* OonishiLayout.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +171,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B0D517892A48BACC00B8A7FD = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					B0D5179E2A48BAE700B8A7FD = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -116,6 +192,7 @@
 			projectRoot = "";
 			targets = (
 				B0D517892A48BACC00B8A7FD /* OonishiLayoutKeyboard */,
+				B0D5179E2A48BAE700B8A7FD /* OonishiLayout */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +207,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0D5179D2A48BAE700B8A7FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +221,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D517AD2A48BB4A00B8A7FD /* KeyboardView.swift in Sources */,
 				B0D517902A48BACC00B8A7FD /* ContentView.swift in Sources */,
 				B0D5178E2A48BACC00B8A7FD /* OonishiLayoutKeyboardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0D5179B2A48BAE700B8A7FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D517A22A48BAE700B8A7FD /* KeyboardViewController.swift in Sources */,
+				B0D517AC2A48BB3F00B8A7FD /* KeyboardView.swift in Sources */,
+				B0D517B32A48BD4C00B8A7FD /* View+changeHostingViewBackgroundColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0D517A52A48BAE700B8A7FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0D5179E2A48BAE700B8A7FD /* OonishiLayout */;
+			targetProxy = B0D517A42A48BAE700B8A7FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B0D517962A48BACD00B8A7FD /* Debug */ = {
@@ -262,6 +365,7 @@
 		B0D517992A48BACD00B8A7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +395,7 @@
 		B0D5179A2A48BACD00B8A7FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +422,56 @@
 			};
 			name = Release;
 		};
+		B0D517A82A48BAE700B8A7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW97U5J24N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OonishiLayout/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OonishiLayout;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naokiTakahashi.OonishiLayoutKeyboard.OonishiLayout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0D517A92A48BAE700B8A7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW97U5J24N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OonishiLayout/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OonishiLayout;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naokiTakahashi.OonishiLayoutKeyboard.OonishiLayout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +489,15 @@
 			buildConfigurations = (
 				B0D517992A48BACD00B8A7FD /* Debug */,
 				B0D5179A2A48BACD00B8A7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0D517A72A48BAE700B8A7FD /* Build configuration list for PBXNativeTarget "OonishiLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D517A82A48BAE700B8A7FD /* Debug */,
+				B0D517A92A48BAE700B8A7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
