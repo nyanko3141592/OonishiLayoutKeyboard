@@ -19,13 +19,18 @@ struct KeyboardView: View {
     
     @State private var inputText: String = ""
     @State private var convertedText: String = ""
+    @State private var suggestWords: [String] = []
     
     let keys : [[String]] = [
         ["l", "u", "、", "。", "f", "w", "r", "y", "/"],
         ["e", "i", "a", "o", "ー", "k", "t", "n", "s", "h"],
-        [";", "g", "d", "m", "j", "b"]
+        ["z", "","", "v",";", "g", "d", "m", "j", "b"]
     ]
     
+    let CONV_WORDS : [[String]] = [
+        ["おおにし", "大西"],
+        ["はいれつ", "配列"]
+    ]
     let CONV_ROMA_HIRA: [[String]] = [
         ["ltsu", "っ"],
         ["xtsu", "っ"],
@@ -299,10 +304,32 @@ struct KeyboardView: View {
             ZStack{
                 Spacer()
                     .frame(height: keyHeight)
-                TextField("", text: $inputText)
-                    .onChange(of: inputText) { _ in
-                        convertText()
+                HStack{
+                    Text(" ")
+                    TextField("", text: $inputText)
+                        .onChange(of: inputText) { _ in
+                            convertText()
+                            suggestWords = suggestConvWord()
+                        }
+                        .frame(maxWidth: keyWidth * 4.5)
+                    Divider()
+                    if suggestWords.count != 0{
+                        ForEach(suggestWords,id: \.self) { key in
+                            Button(action: {
+                                inputTextAction(key)
+                                enteredText()
+                            }) {
+                                Text(" " + key + " ")
+                                    .frame(height: keyHeight)
+                                    .background(Color(uiColor: .systemBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .shadow(radius: 8)
+                            }
+                        }
                     }
+                    
+                    Spacer()
+                }
                 
             }
             HStack(spacing: keySpacing) {
@@ -348,22 +375,26 @@ struct KeyboardView: View {
                 Spacer()
             }
             HStack(spacing: keySpacing) {
-                ZStack{
-                    Spacer()
-                        .frame(width: keyWidth * 4.5 + keySpacing * 5)
-                    Text("大西配列")
-                        .font(.system(size: keyHeight / 3))
-                }
+                Spacer()
+                    .frame(width: keyWidth * 0.5 + keySpacing * 0.5)
                 Group {
                     ForEach(keys[2], id: \.self) { key in
-                        Button(action: {
-                            inputText += key
-                        }) {
-                            Text(key)
+                        if key == ""{
+                            Spacer()
                                 .frame(width: keyWidth, height: keyHeight)
-                                .background(Color(uiColor: .systemBackground))
+                                .background(Color(uiColor: .systemGray))
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                                 .shadow(radius: 8)
+                        }else{
+                            Button(action: {
+                                inputText += key
+                            }) {
+                                Text(key)
+                                    .frame(width: keyWidth, height: keyHeight)
+                                    .background(Color(uiColor: .systemBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .shadow(radius: 8)
+                            }
                         }
                     }
                 }
@@ -389,8 +420,8 @@ struct KeyboardView: View {
                     }
                     Spacer()
                     Button("") {
-                        if inputText.count == 0 {
-                            inputTextAction(" ")
+                        if inputText == "" {
+                            inputTextAction("　")
                         }else{
                             // 変換のsuggestを出す
                         }
@@ -415,7 +446,7 @@ struct KeyboardView: View {
                     Button {
                         // enter text
                         inputTextAction(inputText)
-                        inputText = ""
+                        enteredText()
                     } label: {
                         Image(systemName: "arrow.turn.down.left")
                             .frame(width: keyHeight, height: keyHeight)
@@ -436,6 +467,29 @@ struct KeyboardView: View {
         for i in 0..<CONV_ROMA_HIRA.count{
             inputText = inputText.replacingOccurrences(of: CONV_ROMA_HIRA[i][0], with: CONV_ROMA_HIRA[i][1])
         }
+    }
+    
+    func enteredText(){
+        inputText = ""
+        suggestWords = []
+    }
+    
+    private func suggestConvWord() -> [String]{
+        if inputText == ""{
+            return []
+        }
+        var suggestWordsTemp: [String] = []
+        // inputTextをローマ字で置換
+        var currentInputText = inputText
+        for word in CONV_WORDS{
+            currentInputText = currentInputText.replacingOccurrences(of: word[0], with: word[1])
+        }
+        suggestWordsTemp.append(currentInputText)
+        if inputText != currentInputText{
+            suggestWordsTemp.append(inputText)
+        }
+        
+        return  suggestWordsTemp
     }
     
 }
