@@ -2,10 +2,11 @@
 //  KeyboardView.swift
 //  OonishiLayout
 //
-//  Created by 高橋直希 on 2023/06/26.
+//  Created by 高橋直希 /Users/naoki/Desktop/AzooKeyCoreon 2023/06/26.
 //
 
 import SwiftUI
+import KanaKanjiConverterModule
 
 struct KeyboardView: View {
     let needsInputModeSwitchKey: Bool
@@ -473,24 +474,33 @@ struct KeyboardView: View {
         inputText = ""
         suggestWords = []
     }
-    
-    private func suggestConvWord() -> [String]{
-        if inputText == ""{
+
+    private func suggestConvWord() -> [String] {
+        if inputText == "" {
             return []
         }
-        var suggestWordsTemp: [String] = []
-        // inputTextをローマ字で置換
-        var currentInputText = inputText
-        for word in CONV_WORDS{
-            currentInputText = currentInputText.replacingOccurrences(of: word[0], with: word[1])
-        }
-        suggestWordsTemp.append(currentInputText)
-        if inputText != currentInputText{
-            suggestWordsTemp.append(inputText)
+        
+        // 変換器を初期化する
+        let converter = KanaKanjiConverter()
+        
+        // 入力を初期化する
+        var composingText = ComposingText()
+        composingText.insertAtCursorPosition(inputText, inputStyle: .direct)
+        
+        // 変換のためのオプションを指定
+        let options = ConvertRequestOptions.appDefault
+        
+        // 変換を要求し、結果を取得
+        let results = converter.requestCandidates(composingText, options: options)
+        
+        if let firstResult = results.mainResults.first {
+            // 変換結果の一番目を表示
+            return [firstResult.text]
         }
         
-        return  suggestWordsTemp
+        return []
     }
+
     
 }
 
@@ -521,3 +531,9 @@ struct NextKeyboardButtonOverlay: UIViewRepresentable {
     func updateUIView(_ button: UIButton, context: Context) {}
 }
 
+
+extension ConvertRequestOptions {
+    static var appDefault: Self {
+        .init(requireJapanesePrediction: false, requireEnglishPrediction: false, keyboardLanguage: .ja_JP, englishCandidateInRoman2KanaInput: false, halfWidthKanaCandidate: false, learningType: .nothing, dictionaryResourceURL: Bundle.main.bundleURL.appending(path: "Dictionary", directoryHint: .isDirectory), memoryDirectoryURL: Bundle.main.bundleURL, sharedContainerURL: Bundle.main.bundleURL, metadata: .init(appVersionString: "DictionaryDebugger"))
+    }
+}

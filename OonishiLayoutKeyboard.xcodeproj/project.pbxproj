@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09FAB332A4E2EEB001ABE7C /* KanaKanjiConverterModule in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB322A4E2EEB001ABE7C /* KanaKanjiConverterModule */; };
+		B09FAB352A4E2EEB001ABE7C /* SwiftUIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB342A4E2EEB001ABE7C /* SwiftUIUtils */; };
+		B09FAB372A4E2EEB001ABE7C /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB362A4E2EEB001ABE7C /* SwiftUtils */; };
+		B09FAB392A4E2EF1001ABE7C /* KanaKanjiConverterModule in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB382A4E2EF1001ABE7C /* KanaKanjiConverterModule */; };
+		B09FAB3B2A4E2EF1001ABE7C /* SwiftUIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB3A2A4E2EF1001ABE7C /* SwiftUIUtils */; };
+		B09FAB3D2A4E2EF1001ABE7C /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = B09FAB3C2A4E2EF1001ABE7C /* SwiftUtils */; };
 		B0D5178E2A48BACC00B8A7FD /* OonishiLayoutKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5178D2A48BACC00B8A7FD /* OonishiLayoutKeyboardApp.swift */; };
 		B0D517902A48BACC00B8A7FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5178F2A48BACC00B8A7FD /* ContentView.swift */; };
 		B0D517922A48BACD00B8A7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D517912A48BACD00B8A7FD /* Assets.xcassets */; };
@@ -43,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B09FAB312A4E2EDD001ABE7C /* AzooKeyCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AzooKeyCore; path = ../AzooKeyCore; sourceTree = "<group>"; };
 		B0D5178A2A48BACC00B8A7FD /* OonishiLayoutKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OonishiLayoutKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5178D2A48BACC00B8A7FD /* OonishiLayoutKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OonishiLayoutKeyboardApp.swift; sourceTree = "<group>"; };
 		B0D5178F2A48BACC00B8A7FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09FAB372A4E2EEB001ABE7C /* SwiftUtils in Frameworks */,
+				B09FAB352A4E2EEB001ABE7C /* SwiftUIUtils in Frameworks */,
+				B09FAB332A4E2EEB001ABE7C /* KanaKanjiConverterModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,18 +77,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09FAB3D2A4E2EF1001ABE7C /* SwiftUtils in Frameworks */,
+				B09FAB3B2A4E2EF1001ABE7C /* SwiftUIUtils in Frameworks */,
+				B09FAB392A4E2EF1001ABE7C /* KanaKanjiConverterModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02C5F542A4E2AFA00A6C61D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0D517812A48BACC00B8A7FD = {
 			isa = PBXGroup;
 			children = (
+				B0F040FE2A4E26EF00E7BA27 /* Packages */,
 				B0D5178C2A48BACC00B8A7FD /* OonishiLayoutKeyboard */,
 				B0D517A02A48BAE700B8A7FD /* OonishiLayout */,
 				B0D5178B2A48BACC00B8A7FD /* Products */,
+				B02C5F542A4E2AFA00A6C61D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +143,14 @@
 			path = OonishiLayout;
 			sourceTree = "<group>";
 		};
+		B0F040FE2A4E26EF00E7BA27 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B09FAB312A4E2EDD001ABE7C /* AzooKeyCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +169,11 @@
 				B0D517A52A48BAE700B8A7FD /* PBXTargetDependency */,
 			);
 			name = OonishiLayoutKeyboard;
+			packageProductDependencies = (
+				B09FAB322A4E2EEB001ABE7C /* KanaKanjiConverterModule */,
+				B09FAB342A4E2EEB001ABE7C /* SwiftUIUtils */,
+				B09FAB362A4E2EEB001ABE7C /* SwiftUtils */,
+			);
 			productName = OonishiLayoutKeyboard;
 			productReference = B0D5178A2A48BACC00B8A7FD /* OonishiLayoutKeyboard.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +191,11 @@
 			dependencies = (
 			);
 			name = OonishiLayout;
+			packageProductDependencies = (
+				B09FAB382A4E2EF1001ABE7C /* KanaKanjiConverterModule */,
+				B09FAB3A2A4E2EF1001ABE7C /* SwiftUIUtils */,
+				B09FAB3C2A4E2EF1001ABE7C /* SwiftUtils */,
+			);
 			productName = OonishiLayout;
 			productReference = B0D5179F2A48BAE700B8A7FD /* OonishiLayout.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -355,6 +395,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -507,6 +548,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B09FAB322A4E2EEB001ABE7C /* KanaKanjiConverterModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KanaKanjiConverterModule;
+		};
+		B09FAB342A4E2EEB001ABE7C /* SwiftUIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUIUtils;
+		};
+		B09FAB362A4E2EEB001ABE7C /* SwiftUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUtils;
+		};
+		B09FAB382A4E2EF1001ABE7C /* KanaKanjiConverterModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KanaKanjiConverterModule;
+		};
+		B09FAB3A2A4E2EF1001ABE7C /* SwiftUIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUIUtils;
+		};
+		B09FAB3C2A4E2EF1001ABE7C /* SwiftUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0D517822A48BACC00B8A7FD /* Project object */;
 }
